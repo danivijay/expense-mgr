@@ -8,8 +8,15 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+      const { name, amount, type } = req.body;
+      const transaction = {
+            name,
+            amount,
+            type,
+      };
       res.status(201).json({
             message: 'POST Req Handler',
+            transaction,
       });
 });
 

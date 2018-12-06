@@ -8,8 +8,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
+      const { name } = req.body;
+      const project = {
+            name,
+      };
       res.status(201).json({
             message: 'POST Req Handler',
+            project,
       });
 });
 
